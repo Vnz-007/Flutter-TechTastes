@@ -4,5 +4,6 @@ abstract class CategoriesData {
     'Principais',
     'Massas',
     'Sobremesas',
+    'Bebidas',
   ];
 }
