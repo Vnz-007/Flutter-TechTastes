@@ -6,7 +6,7 @@ import 'package:myapp/model/restaurant.dart';
 class RestaurantData extends ChangeNotifier {
   List<Restaurant> listRestaurant = [];
 
-  Future<List<Restaurant>> getRestaurants() async {
+  Future<void> getRestaurants() async {
     String jsonString = await rootBundle.loadString('assets/data.json');
     Map<String, dynamic> data = json.decode(jsonString);
     List<dynamic> restaurantsData = data['restaurants'];
@@ -15,7 +15,5 @@ class RestaurantData extends ChangeNotifier {
       Restaurant restaurant = Restaurant.fromMap(restaurantData);
       listRestaurant.add(restaurant);
     }
-
-    return listRestaurant;
   }
 }
